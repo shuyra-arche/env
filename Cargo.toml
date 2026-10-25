@@ -1,0 +1,21 @@
+[package]
+name = "env"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+test = false
+bench = false
+doctest = false
+
+[workspace]
+resolver = "3"
+
+[dependencies]
+bitflags = "2"
+erra = { version = "0.2.0", default-features = false }
+mold = { git = "https://github.com/shuyra-arche/mold.git", rev = "f52501f4c91b686eded8b4bcd743b4e96084b7f9" }
+wire = { git = "https://github.com/shuyra-arche/wire.git", rev = "0ff77dc4573fa2620d2fe995a18c01949d9c7e57" }
+
+[dev-dependencies]
+syn = { version = "2", features = ["full", "visit"] }
