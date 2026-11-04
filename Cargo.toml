@@ -11,11 +11,11 @@ doctest = false
 [workspace]
 resolver = "3"
 
+# 运行时只有一条边：兼容外壳 → Kernel 权威包。定义不在本仓。
 [dependencies]
-bitflags = "2"
-erra = { version = "0.2.0", default-features = false }
-mold = { git = "https://github.com/shuyra-arche/mold.git", rev = "f52501f4c91b686eded8b4bcd743b4e96084b7f9" }
-wire = { git = "https://github.com/shuyra-arche/wire.git", rev = "0ff77dc4573fa2620d2fe995a18c01949d9c7e57" }
+kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
 
+# 判据用（不进运行时图）：伞包路径与 writer 侧 byte codec 必须是同一枚类型/trait。
 [dev-dependencies]
-syn = { version = "2", features = ["full", "visit"] }
+kernel-api = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
+kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
