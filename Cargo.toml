@@ -14,11 +14,11 @@ members = ["initrd"]
 
 # Legacy names forward types to API and effects to Client; neither is defined here.
 [dependencies]
-kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
-kernel-client = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
+kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "90d43dbf3ee43fd146f487718eb39e88f2507c05" }
+kernel-client = { git = "https://github.com/shuyra-arche/kernel.git", rev = "90d43dbf3ee43fd146f487718eb39e88f2507c05" }
 
 # 判据用（不进运行时图）：伞包路径与 writer 侧 byte codec 必须是同一枚类型/trait。
 [dev-dependencies]
 env-initrd = { path = "initrd" }
-kernel-api = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
-kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
+kernel-api = { git = "https://github.com/shuyra-arche/kernel.git", rev = "90d43dbf3ee43fd146f487718eb39e88f2507c05" }
+kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "90d43dbf3ee43fd146f487718eb39e88f2507c05" }

@@ -6,7 +6,7 @@ legacy consumer adapter, not a second API implementation. New pure consumers
 should depend directly on API; new callers should use Client.
 
 All Kernel dependencies, including the independent `env-initrd` package, pin
-`a9a1d8d788213597adb69605d1787bdef65d2b64`. Types, codec traits and return decoding
+`90d43dbf3ee43fd146f487718eb39e88f2507c05`. Types, codec traits and return decoding
 have one owner. This repository defines no call table, asm transport, allocator,
 TLS table or task registry.
 

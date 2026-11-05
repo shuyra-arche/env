@@ -41,7 +41,7 @@ checksum = "bc36b9bc9f9fd011eb63c44cdba19d47c4e77f4759cddb0c448b1d23d27abc1e"
 [[package]]
 name = "kernel-api"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=90d43dbf3ee43fd146f487718eb39e88f2507c05#90d43dbf3ee43fd146f487718eb39e88f2507c05"
 dependencies = [
  "kernel-api-env",
  "kernel-api-wire",
@@ -50,7 +50,7 @@ dependencies = [
 [[package]]
 name = "kernel-api-env"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=90d43dbf3ee43fd146f487718eb39e88f2507c05#90d43dbf3ee43fd146f487718eb39e88f2507c05"
 dependencies = [
  "bitflags",
  "erra",
@@ -61,7 +61,7 @@ dependencies = [
 [[package]]
 name = "kernel-api-macros"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=90d43dbf3ee43fd146f487718eb39e88f2507c05#90d43dbf3ee43fd146f487718eb39e88f2507c05"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -71,12 +71,12 @@ dependencies = [
 [[package]]
 name = "kernel-api-wire"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=90d43dbf3ee43fd146f487718eb39e88f2507c05#90d43dbf3ee43fd146f487718eb39e88f2507c05"
 
 [[package]]
 name = "kernel-client"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=90d43dbf3ee43fd146f487718eb39e88f2507c05#90d43dbf3ee43fd146f487718eb39e88f2507c05"
 dependencies = [
  "erra",
  "kernel-api-env",
