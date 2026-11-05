@@ -1,8 +1,8 @@
 # env
 
-`env` 是 shuyra `env` 面的**兼容适配器（facade）**：本仓**一个定义都不写**——
+`env` 是 shuyra `env` 面的**兼容适配器（facade）**：该包**一个定义都不写**——
 不写调用表、不写线类型、不写 codec、不写权限位、不写 marks、不写名字与账本条目。
-整份源码只有 `pub use kernel_api_env::*;`，把 Kernel 的权威包 `kernel-api-env`
+该包源码只有 `pub use kernel_api_env::*;`，把 Kernel 的权威包 `kernel-api-env`
 原样转出。
 
 两类名字要分开看，两条判据都在 `tests/identity.rs`：
@@ -37,6 +37,12 @@ dev-dependency，不进运行时图。
 分支名）。旧定义仓（`sqware` 的 `crates/env`、旧 `wire`、旧 `mold`）**一条边都没
 有**：一个构建图里出现两份 `env` 或两份 `wire` 的定义会破类型同一性，故新旧
 owner **不得并存**、也不得用 `[patch]` 之类的手段把两边缝在一起。
+
+工作区的独立 `env-initrd` 包拥有 `env_initrd::ledger::bundle`：Unit 二进制声明、
+共享镜像和必要资源。`env` facade 的导出保持原样；胶囊读取器由
+`kernel-api-env::ledger::capsule` 直接转出，不恢复旧 `src/ledger` 或复制 ABI。
+initrd 前八字节保留内核的 offset/length 合同，不记录 Deployment 名称或启动清单。
+读侧完整验证后才返回借用视图。
 
 ## 独立构建与测试
 
