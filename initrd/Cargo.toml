@@ -10,4 +10,4 @@ bench = false
 doctest = false
 
 [dependencies]
-kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
+kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }

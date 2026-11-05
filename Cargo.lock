@@ -3,6 +3,12 @@
 version = 4
 
 [[package]]
+name = "allocator-api2"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c880a97d28a3681c0267bd29cff89621202715b065127cd445fa0f0fe0aa2880"
+
+[[package]]
 name = "bitflags"
 version = "2.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -16,6 +22,7 @@ dependencies = [
  "kernel-api",
  "kernel-api-env",
  "kernel-api-wire",
+ "kernel-client",
 ]
 
 [[package]]
@@ -34,7 +41,7 @@ checksum = "bc36b9bc9f9fd011eb63c44cdba19d47c4e77f4759cddb0c448b1d23d27abc1e"
 [[package]]
 name = "kernel-api"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9986c82127cf25183bf5c30e7d42e4a9376b734#a9986c82127cf25183bf5c30e7d42e4a9376b734"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
 dependencies = [
  "kernel-api-env",
  "kernel-api-wire",
@@ -43,7 +50,7 @@ dependencies = [
 [[package]]
 name = "kernel-api-env"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9986c82127cf25183bf5c30e7d42e4a9376b734#a9986c82127cf25183bf5c30e7d42e4a9376b734"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
 dependencies = [
  "bitflags",
  "erra",
@@ -54,7 +61,7 @@ dependencies = [
 [[package]]
 name = "kernel-api-macros"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9986c82127cf25183bf5c30e7d42e4a9376b734#a9986c82127cf25183bf5c30e7d42e4a9376b734"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -64,7 +71,27 @@ dependencies = [
 [[package]]
 name = "kernel-api-wire"
 version = "0.1.0"
-source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9986c82127cf25183bf5c30e7d42e4a9376b734#a9986c82127cf25183bf5c30e7d42e4a9376b734"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+
+[[package]]
+name = "kernel-client"
+version = "0.1.0"
+source = "git+https://github.com/shuyra-arche/kernel.git?rev=a9a1d8d788213597adb69605d1787bdef65d2b64#a9a1d8d788213597adb69605d1787bdef65d2b64"
+dependencies = [
+ "erra",
+ "kernel-api-env",
+ "spinning_top",
+ "talc",
+]
+
+[[package]]
+name = "lock_api"
+version = "0.4.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "224399e74b87b5f3557511d98dff8b14089b3dadafcab6bb93eab67d3aace965"
+dependencies = [
+ "scopeguard",
+]
 
 [[package]]
 name = "proc-macro2"
@@ -85,6 +112,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "scopeguard"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
+
+[[package]]
+name = "spinning_top"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d96d2d1d716fb500937168cc09353ffdc7a012be8475ac7308e1bdf0e3923300"
+dependencies = [
+ "lock_api",
+]
+
+[[package]]
 name = "syn"
 version = "2.0.119"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -93,6 +135,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "talc"
+version = "5.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "53f8ad14fa1c1b8635114abf9721076fe1e869572a5f26a52690f407292c80dc"
+dependencies = [
+ "allocator-api2",
+ "lock_api",
 ]
 
 [[package]]

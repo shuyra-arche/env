@@ -12,12 +12,13 @@ doctest = false
 resolver = "3"
 members = ["initrd"]
 
-# 运行时只有一条边：兼容外壳 → Kernel 权威包。定义不在本仓。
+# Legacy names forward types to API and effects to Client; neither is defined here.
 [dependencies]
-kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
+kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
+kernel-client = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
 
 # 判据用（不进运行时图）：伞包路径与 writer 侧 byte codec 必须是同一枚类型/trait。
 [dev-dependencies]
 env-initrd = { path = "initrd" }
-kernel-api = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
-kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
+kernel-api = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
+kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9a1d8d788213597adb69605d1787bdef65d2b64" }
