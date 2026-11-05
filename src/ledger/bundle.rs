@@ -2,12 +2,19 @@
 //! The first eight bytes remain the kernel's capsule offset/length contract.
 //! No deployment name, startup list, or host paths are stored here.
 
+#[path = "bundle/archive.rs"]
 mod archive;
+#[path = "bundle/error.rs"]
 mod error;
+#[path = "bundle/file.rs"]
 mod file;
+#[path = "bundle/files.rs"]
 mod files;
+#[path = "bundle/kind.rs"]
 mod kind;
+#[path = "bundle/unit.rs"]
 mod unit;
+#[path = "bundle/units.rs"]
 mod units;
 
 pub use archive::Archive;

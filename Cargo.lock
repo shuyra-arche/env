@@ -13,11 +13,16 @@ name = "env"
 version = "0.1.0"
 dependencies = [
  "bitflags",
+ "env-initrd",
  "erra",
  "mold",
  "syn",
  "wire",
 ]
+
+[[package]]
+name = "env-initrd"
+version = "0.1.0"
 
 [[package]]
 name = "erra"

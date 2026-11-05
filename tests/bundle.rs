@@ -1,4 +1,4 @@
-use env::ledger::{
+use env_initrd::ledger::{
     bundle::{self, Archive, File, Kind, Unit},
     capsule,
 };

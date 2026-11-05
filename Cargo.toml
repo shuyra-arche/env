@@ -10,6 +10,7 @@ doctest = false
 
 [workspace]
 resolver = "3"
+members = ["initrd"]
 
 [dependencies]
 bitflags = "2"
@@ -18,4 +19,5 @@ mold = { git = "https://github.com/shuyra-arche/mold.git", rev = "f52501f4c91b68
 wire = { git = "https://github.com/shuyra-arche/wire.git", rev = "0ff77dc4573fa2620d2fe995a18c01949d9c7e57" }
 
 [dev-dependencies]
+env-initrd = { path = "initrd" }
 syn = { version = "2", features = ["full", "visit"] }

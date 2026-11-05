@@ -1,5 +1,10 @@
 # Versioned initrd bundle
 
+The independent `env-initrd` package compiles the same format implementation
+without depending on ABI types. This lets a local Cargo overlay select Env's
+current source while existing SDK ABI pins retain one type identity. The bundle
+tests target this package directly; its RV64 check and all Env host tests pass.
+
 The `VNI1` bundle preserves the existing eight-byte kernel capsule preamble.
 It contains Unit records and named image/resource bytes. Unit IDs and Cargo bin
 names are independent; several Unit declarations can reference the same image.
