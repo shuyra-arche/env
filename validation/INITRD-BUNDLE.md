@@ -1,9 +1,10 @@
 # Versioned initrd bundle
 
-The independent `env-initrd` package compiles the same format implementation
-without depending on ABI types. This lets a local Cargo overlay select Env's
-current source while existing SDK ABI pins retain one type identity. The bundle
-tests target this package directly; its RV64 check and all Env host tests pass.
+The independent `env-initrd` package owns the Unit bundle implementation under
+`initrd/src/ledger`. The root `env` package keeps its canonical Kernel facade
+unchanged. The capsule reader is directly re-exported from `kernel-api-env` at
+the same exact Kernel revision as the facade; deleted legacy ABI/ledger source
+files are not restored. No second capsule implementation is compiled.
 
 The `VNI1` bundle preserves the existing eight-byte kernel capsule preamble.
 It contains Unit records and named image/resource bytes. Unit IDs and Cargo bin
@@ -16,8 +17,12 @@ boot capsule before exposing any records. Input strings and file bytes are
 borrowed; validation allocates nothing. Host packing constructs the complete
 bundle before publication.
 
-On `nightly-2026-10-09`, four new Rust tests passed, covering borrowed roundtrip,
+On `nightly-2026-10-09`, five bundle Rust tests passed, covering borrowed roundtrip,
 every truncated prefix, appended bytes, corrupted headers/records/padding,
-duplicates and invalid resource boot entries. No QEMU was run. Strict Clippy
-also reports existing diagnostics in unrelated ABI/ecall code; this is not a
-claim that the complete repository passes Clippy.
+duplicates, invalid resource boot entries and capsule type identity with the
+canonical Kernel owner. All 52 workspace host tests and the RV64 workspace check
+passed, including the facade's existing identity/frame/wire checks. Strict
+Clippy passed for `env-initrd` and the bundle/identity/frame/wire-code tests.
+Whole-workspace strict Clippy reports two existing constant-chunk diagnostics in
+`tests/memory.rs`; those retained tests were not rewritten. Host results alone
+are not a runtime acceptance claim.

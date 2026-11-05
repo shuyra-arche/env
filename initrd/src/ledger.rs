@@ -1,6 +1,3 @@
-// Both packages compile the same format implementation. No ABI dependency or
-// second implementation is needed by host and runtime bundle consumers.
-#[path = "../../src/ledger/capsule.rs"]
-pub mod capsule;
-#[path = "../../src/ledger/bundle.rs"]
+// The boot capsule remains owned by Kernel; this package owns the Unit bundle.
+pub use kernel_api_env::ledger::capsule;
 pub mod bundle;

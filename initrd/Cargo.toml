@@ -8,3 +8,6 @@ publish = false
 test = false
 bench = false
 doctest = false
+
+[dependencies]
+kernel-api-env = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }

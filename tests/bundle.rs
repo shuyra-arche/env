@@ -3,6 +3,14 @@ use env_initrd::ledger::{
     capsule,
 };
 
+#[test]
+fn capsule_types_are_the_kernel_owner_types() {
+    let bytes = boot();
+    let capsule: kernel_api_env::ledger::capsule::Capsule<'_> =
+        capsule::Capsule::parse(&bytes).unwrap();
+    let _: env::ledger::capsule::Region = capsule.region(0).unwrap();
+}
+
 fn boot() -> Vec<u8> {
     let mut out = vec![0; capsule::PAGE * 2];
     out[..8].copy_from_slice(&capsule::MAGIC);
